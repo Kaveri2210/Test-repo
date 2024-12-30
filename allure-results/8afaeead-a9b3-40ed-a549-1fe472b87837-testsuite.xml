@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1735025153672' stop='1735025196882'>
+    <name>Leave Application Workflow.</name>
+    <title>Leave Application Workflow.</title>
+    <test-cases>
+        <test-case start='1735025153899' status='broken' stop='1735025196882'>
+            <name>should allow user to apply for leave and validate the leave details.</name>
+            <title>should allow user to apply for leave and validate the leave details.</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timed out retrying after 20050ms: `cy.click()` failed because it requires a DOM element or document.
+                
+                No elements in the current DOM matched your query:
+                
+                  > cy.contains(.oxd-label, Leave Type).parent().siblings()</message>
+                <stack-trace>CypressError: Timed out retrying after 20050ms: `cy.click()` failed because it requires a DOM element or document.
+                
+                No elements in the current DOM matched your query:
+                
+                  > cy.contains(.oxd-label, Leave Type).parent().siblings()
+                    at isElement (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:145351:62)
+                    at validateType (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:145209:14)
+                    at Object.isType (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:145240:7)
+                    at Array.&lt;anonymous> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:135605:24)
+                    at $Cy.getSubjectFromChain (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:138952:34)
+                    at _actionability__WEBPACK_IMPORTED_MODULE_6__.default.verify.subjectFn (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:112571:51)
+                    at retryActionability (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:113273:27)
+                    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1807:23)
+                    at Promise.attempt.Promise.try (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:4315:29)
+                    at whenStable (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:144102:68)
+                    at &lt;unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:144043:14)
+                    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1807:23)
+                    at Promise._settlePromiseFromHandler (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1519:31)
+                    at Promise._settlePromise (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1576:18)
+                    at Promise._settlePromise0 (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1621:10)
+                    at Promise._settlePromises (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1701:18)
+                    at Promise._fulfill (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1645:18)
+                    at &lt;unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:5450:46)
+                From Your Spec Code:
+                    at LeavePage.selectLeaveType (webpack:///./cypress/support/pageObjects/LeavePage.js:80:28)
+                    at LeavePage.createLeave (webpack:///./cypress/support/pageObjects/LeavePage.js:71:13)
+                    at Context.eval (webpack:///./cypress/e2e/leave.js:22:14)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

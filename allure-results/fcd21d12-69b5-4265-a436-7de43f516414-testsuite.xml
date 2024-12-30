@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1735025904952' stop='1735025968156'>
+    <name>Admin User Management.</name>
+    <title>Admin User Management.</title>
+    <test-cases>
+        <test-case start='1735025905121' status='failed' stop='1735025968153'>
+            <name>should allow admin to create, search, and delete a user.</name>
+            <title>should allow admin to create, search, and delete a user.</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timed out retrying after 20000ms: Expected to find element: `div[class="oxd-table-body"] div[class="oxd-table-card"] div[role="row"] div[role="cell"]`, but never found it.</message>
+                <stack-trace>AssertionError: Timed out retrying after 20000ms: Expected to find element: `div[class="oxd-table-body"] div[class="oxd-table-card"] div[role="row"] div[role="cell"]`, but never found it.
+                    at AdminPage.getRow (webpack:///./cypress/support/pageObjects/AdminPage.js:60:18)
+                    at Context.eval (webpack:///./cypress/e2e/admin.js:30:16)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

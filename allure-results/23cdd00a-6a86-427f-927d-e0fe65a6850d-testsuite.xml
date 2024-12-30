@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1735025091264' stop='1735025133093'>
+    <name>Admin User Management.</name>
+    <title>Admin User Management.</title>
+    <test-cases>
+        <test-case start='1735025091358' status='passed' stop='1735025133092'>
+            <name>should allow admin to create, search, and delete a user.</name>
+            <title>should allow admin to create, search, and delete a user.</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

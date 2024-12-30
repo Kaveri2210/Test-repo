@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1735549196539' stop='1735549239064'>
+    <name>Leave Application Workflow.</name>
+    <title>Leave Application Workflow.</title>
+    <test-cases>
+        <test-case start='1735549197363' status='failed' stop='1735549239060'>
+            <name>should allow user to apply for leave and validate the leave details.</name>
+            <title>should allow user to apply for leave and validate the leave details.</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timed out retrying after 20000ms: Expected to find element: `input[placeholder="yyyy-mm-dd"]`, but never found it.</message>
+                <stack-trace>AssertionError: Timed out retrying after 20000ms: Expected to find element: `input[placeholder="yyyy-mm-dd"]`, but never found it.
+                    at LeavePage.getToDate (webpack:///./cypress/support/pageObjects/LeavePage.js:20:18)
+                    at LeavePage.createLeave (webpack:///./cypress/support/pageObjects/LeavePage.js:74:13)
+                    at Context.eval (webpack:///./cypress/e2e/leave.js:22:14)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

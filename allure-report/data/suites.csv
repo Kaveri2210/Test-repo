@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","12426","should allow the user to log in and access the dashboard.","","Tue Dec 24 12:56:56 IST 2024","passed","Tue Dec 24 12:57:08 IST 2024","","Login Functionality","Login Functionality","should allow the user to log in and access the dashboard."
+"","42983","should allow user to apply for leave and validate the leave details.","","Tue Dec 24 12:55:53 IST 2024","broken","Tue Dec 24 12:56:36 IST 2024","","Leave Application Workflow.","Leave Application Workflow.","should allow user to apply for leave and validate the leave details."
+"","41734","should allow admin to create, search, and delete a user.","","Tue Dec 24 12:54:51 IST 2024","passed","Tue Dec 24 12:55:33 IST 2024","","Admin User Management.","Admin User Management.","should allow admin to create, search, and delete a user."

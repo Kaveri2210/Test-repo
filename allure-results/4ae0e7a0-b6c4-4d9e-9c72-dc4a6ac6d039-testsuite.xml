@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1735026267775' stop='1735026284971'>
+    <name>Login Functionality</name>
+    <title>Login Functionality</title>
+    <test-cases>
+        <test-case start='1735026268293' status='passed' stop='1735026284970'>
+            <name>should allow the user to log in and access the dashboard.</name>
+            <title>should allow the user to log in and access the dashboard.</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

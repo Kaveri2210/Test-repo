@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "cypress": "^13.14.2"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "allure-commandline": "^2.32.0",
+    "chai-as-promised": "^8.0.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mocha-allure-reporter": "^1.4.0"
+  },
+  "scripts": {
+    "test": "npx cypress run",
+    "test:chrome": "npx cypress run --browser chrome",  
+    "test:firefox": "npx cypress run --browser firefox",  
+    "test:edge": "npx cypress run --browser edge", 
+    "report:allure": "allure generate \"allure-results\" --clean -o \"allure-report\" && allure open \"allure-report\""
+  }
+}
+
