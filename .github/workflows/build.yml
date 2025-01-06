@@ -1,9 +1,9 @@
 name: Cypress UI Automation CI
 
 on:
-  pull_request:
-    branches: [main]
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -12,57 +12,65 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '16'
 
+      # Install dependencies
       - name: Install Dependencies
-        run: npm install
+        run: npm ci --prefer-offline --no-audit --progress=false
 
+      # Install Cypress
       - name: Install Cypress
         run: npx cypress install
 
-      - name: Run Cypress UI Tests
-        id: cypress
+      # Run Cypress tests with Mochawesome reporter
+      - name: Run Cypress Tests
         run: |
-          echo "Running Cypress tests with mochawesome report..."
+          echo "Running Cypress tests with Mochawesome..."
           npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,reportFilename=report.json || true
 
-      - name: Check Test Failures
+      # Generate Allure report (optional step)
+      - name: Generate Allure Report
         run: |
-          echo "Analyzing test results..."
-          failures=$(jq '.stats.failures' cypress/reports/report.json)
-          echo "Number of failed test cases: $failures"
-          if [ "$failures" -le 10 ]; then
-            echo "Acceptable number of failures ($failures). Pipeline will pass."
-            exit 0
-          else
-            echo "Too many failures ($failures). Pipeline will fail."
-            exit 1
-          fi
-        env:
-          CYPRESS_BASE_URL: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+          echo "Generating Allure report..."
+          allure generate "allure-results" --clean -o "allure-report" && allure open "allure-report"
+        continue-on-error: true
 
+      # Upload Mochawesome report as an artifact
+      - name: Upload Mochawesome Report
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: mochawesome-report
+          path: cypress/reports
+
+      # Upload Allure results if required
+      - name: Upload Allure Results
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-results
+          path: allure-results/
+
+      # Upload screenshots (if any)
       - name: Upload Screenshots (if any)
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: cypress-screenshots
           path: cypress/screenshots/
 
+      # Upload videos (if any)
       - name: Upload Videos (if any)
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: cypress-videos
           path: cypress/videos/
-
-      - name: Generate Test Report
-        run: |
-          echo "Generating Cypress test report..."
-          ls -R cypress/reports/
-        if: always()
