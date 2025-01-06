@@ -8,8 +8,8 @@
     "chai-as-promised": "^8.0.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-mochawesome-reporter": "^3.8.2",
-    "mocha-allure-reporter": "^1.4.0",
-    "install_cypress":"npm install --save-dev cypress"
+    "mocha-allure-reporter": "^1.4.0"
+
 
   },
   "scripts": {
