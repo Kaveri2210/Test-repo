@@ -37,9 +37,17 @@ module.exports = defineConfig({
   env: {
     url: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
   },
-  reporter: 'mocha-allure-reporter',
+  // reporter: 'mocha-allure-reporter',
+  // reporterOptions: {
+  //   allure: true,
+  //   outputDir: 'cypress/allure-results',
+  // },
+  reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    allure: true,
-    outputDir: 'cypress/allure-results',
-  },
+    reportDir: 'cypress/reports/mochawesome',  // Directory where the reports will be saved
+    reportFilename: 'report',                 // Name of the report file
+    overwrite: true,                          // Overwrite the report if exists
+    html: true,                               // Generate HTML report
+    json: true,  
+  }
 });
