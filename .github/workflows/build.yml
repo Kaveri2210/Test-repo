@@ -46,7 +46,7 @@ jobs:
 
       # Upload screenshots (if any)
       - name: Upload Screenshots (if any)
-        if: failure()
+        if: always()  # Change to always() to upload screenshots regardless of test result
         uses: actions/upload-artifact@v3
         with:
           name: cypress-screenshots
@@ -54,7 +54,7 @@ jobs:
 
       # Upload videos (if any)
       - name: Upload Videos (if any)
-        if: failure()
+        if: always()  # Change to always() to upload videos regardless of test result
         uses: actions/upload-artifact@v3
         with:
           name: cypress-videos
