@@ -36,22 +36,18 @@ jobs:
           echo "Running Cypress tests with Mochawesome..."
           npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,reportFilename=report.json || true
 
-     
-
       # Upload Mochawesome report as an artifact
       - name: Upload Mochawesome Report
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: mochawesome-report
           path: cypress/reports
 
-   
-
       # Upload screenshots (if any)
       - name: Upload Screenshots (if any)
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-screenshots
           path: cypress/screenshots/
@@ -59,7 +55,7 @@ jobs:
       # Upload videos (if any)
       - name: Upload Videos (if any)
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-videos
           path: cypress/videos/
