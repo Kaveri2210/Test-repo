@@ -33,6 +33,8 @@ module.exports = defineConfig({
     video: true,
     videoCompression: 32,
     videoFolder: 'cypress/videos',
+    screenshotOnRunFailure: true,
+    screenshotsFolder: "cypress/screenshots",
   },
   env: {
     url: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
