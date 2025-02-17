@@ -27,6 +27,7 @@ describe('Leave Application Workflow.', function () {
     leavePage.validateTableRows([userData.fromDate, userData.toDate, userData.leaveType]);
     leavePage.addCommentToLeave(userData.comment);
     leavePage.validateTableRows([userData.comment]);
+    
 });
 
 
