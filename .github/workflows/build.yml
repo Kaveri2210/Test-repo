@@ -39,7 +39,7 @@ jobs:
       # Upload Mochawesome report as an artifact
       - name: Upload Mochawesome Report
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
           path: cypress/reports
@@ -47,7 +47,7 @@ jobs:
       # Upload screenshots (if any)
       - name: Upload Screenshots (if any)
         if: always()  # Change to always() to upload screenshots regardless of test result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
           path: cypress/screenshots/
@@ -55,7 +55,7 @@ jobs:
       # Upload videos (if any)
       - name: Upload Videos (if any)
         if: always()  # Change to always() to upload videos regardless of test result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
           path: cypress/videos/
